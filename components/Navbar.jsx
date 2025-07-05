@@ -1,6 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import { useState } from "react";
-import { FaBars } from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -9,30 +11,31 @@ const navLinks = [
   { href: "/packages", label: "Packages" },
   { href: "/downloads", label: "Downloads" },
   { href: "/contact", label: "Contact" },
+  { href: "/student-form", label: "Apply Now" },
 ];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="bg-primary text-white">
+    <nav className="bg-gradient-to-r from-emerald-800 to-emerald-700 text-white shadow-lg">
       <div className="max-w-7xl mx-auto px-4 flex justify-between items-center h-16">
-        <Link href="/" className="text-2xl font-bold">
-          Al-Huda
+        <Link href="/" className="text-2xl font-bold text-amber-100 hover:text-amber-200 transition-colors">
+          🌙 Al-Huda Quran Academy
         </Link>
         <button
-          className="md:hidden"
+          className="md:hidden p-2 rounded-lg hover:bg-emerald-600 transition-colors"
           onClick={() => setOpen((prev) => !prev)}
           aria-label="Toggle Menu"
         >
-          <FaBars size={24} />
+          {open ? <FaTimes size={24} /> : <FaBars size={24} />}
         </button>
         <ul className="hidden md:flex space-x-6">
           {navLinks.map((link) => (
             <li key={link.href}>
               <Link
                 href={link.href}
-                className="hover:text-secondary transition-colors"
+                className="hover:text-amber-200 transition-colors px-3 py-2 rounded-md hover:bg-emerald-600 font-medium"
               >
                 {link.label}
               </Link>
@@ -41,20 +44,20 @@ export default function Navbar() {
         </ul>
       </div>
       {open && (
-        <ul className="md:hidden bg-primary px-4 pb-4 space-y-2">
+        <div className="md:hidden bg-emerald-800 px-4 pb-4 space-y-2 border-t border-emerald-600">
           {navLinks.map((link) => (
-            <li key={link.href}>
+            <div key={link.href}>
               <Link
                 href={link.href}
-                className="block py-1 hover:text-secondary"
+                className="block py-3 px-3 hover:text-amber-200 hover:bg-emerald-600 rounded-md transition-colors font-medium"
                 onClick={() => setOpen(false)}
               >
                 {link.label}
               </Link>
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
       )}
     </nav>
   );
-}
+} 

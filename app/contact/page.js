@@ -1,4 +1,4 @@
-import ContactForm from "@/components/forms/ContactForm";
+import ContactForm from "../../components/forms/ContactForm.jsx";
 import { FaFacebook, FaWhatsapp } from "react-icons/fa";
 
 export default function ContactPage() {

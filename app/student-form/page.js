@@ -1,4 +1,4 @@
-import StudentForm from "@/components/forms/StudentForm";
+import StudentForm from "../../components/forms/StudentForm.jsx";
 
 export default function StudentFormPage() {
   return (
