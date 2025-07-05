@@ -38,13 +38,13 @@ export default function Footer() {
               <div className="flex items-center space-x-3">
                 <FaPhone className="text-amber-200" />
                 <div>
-                  <p>+92 300 1234567</p>
-                  <p>+92 321 7654321</p>
+                  <p>+92 347 2002297</p>
+
                 </div>
               </div>
               <div className="flex items-center space-x-3">
                 <FaEnvelope className="text-amber-200" />
-                <span>info@alhudaquranacademy.com</span>
+                <span>alhudaquranlearnacademy@gmail.com</span>
               </div>
             </div>
           </div>
